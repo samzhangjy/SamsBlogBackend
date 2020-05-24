@@ -7,6 +7,7 @@ module.exports = (app) => {
   app.post('/login', AuthController.login),
   app.post('/login/remember', AuthController.loginRemember),
   app.post('/login/reset', AuthController.resetPassword),
+  app.post('/register', AuthController.register),
   app.post('/post/new', PostController.addPost),
   app.get('/post/latest', PostController.getLatestPosts),
   app.get('/post/all', PostController.getAllPosts),

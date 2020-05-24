@@ -86,5 +86,24 @@ module.exports = {
         error: '登录失败'
       })
     }
+  },
+  register (req, res) {
+    const defaultUser = {
+      username: 'root',
+      email: 'root@example.com',
+      password: 'root'
+    }
+
+    User.create(defaultUser).then(
+      data => {
+        res.send({
+          message: 'Done'
+        })
+      }
+    ).catch(err => {
+      res.status(500).send({
+        error: err.name
+      })
+    })
   }
 }
